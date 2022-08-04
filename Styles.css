@@ -41,7 +41,31 @@ padding: 20px 30px 30px 20px;
 
 /************* Main ******************/
   
-  /************* Footer ******************/
+.Container {
+  display: flex; 
+  flex-direction: column;
+  gap: 50px;
+}
+.row {
+  display: flex; 
+  padding: 50px;  
+  justify-content: space-between;
+}
+.card {
+  padding-left: 50px; 
+  padding-right: 50px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+  text-align: left;
+  font-size: 35px;
+
+
+}
+
+
+
+/************* Footer ******************/
 
 footer {
   position: relative;
