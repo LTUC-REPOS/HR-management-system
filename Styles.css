@@ -4,9 +4,11 @@
 }
 
 body {
-  /* overflow : visible; */
+  
   position: relative;
   height: 100vh;
+  background: black;
+  color: #ffff;
 }
 
 
@@ -46,19 +48,25 @@ padding: 20px 30px 30px 20px;
   flex-direction: column;
   gap: 50px;
 }
-.row {
+.employeeContainer {
   display: flex; 
   padding: 50px;  
-  justify-content: space-between;
+  justify-content:   space-between ;
+  border-color: #ffff;
+   
 }
-.card {
-  padding-left: 50px; 
-  padding-right: 50px; 
+.employeeDiv {
+  padding: 50px;
   display: flex; 
   flex-direction: column; 
   gap: 15px; 
   text-align: left;
   font-size: 35px;
+  border-color: #ffff;
+    
+  
+
+ 
 
 
 }
