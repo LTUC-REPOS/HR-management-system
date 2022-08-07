@@ -164,6 +164,15 @@ let ArrayEmployees =
         new Employee('Tamara Ayoub', 'Marketing', 'Senior', './assests/Tamara.jpg '),
         new Employee('Omar Zaid', 'Development', 'Senior', './assests/Omar.jpg '),
         new Employee('Rana Saleh', 'Development', 'Junior', './assests/Rana.jpg '),
+        new Employee('Omar Zaid', 'Development', 'Senior', './assests/Omar.jpg '),
+        new Employee('Rana Saleh', 'Development', 'Junior', './assests/Rana.jpg '),
+        new Employee('Tamara Ayoub', 'Marketing', 'Senior', './assests/Tamara.jpg '),
+        new Employee('Safi Walid', 'Administration', 'Mid-Senior', './assests/Safi.jpg '),
+        new Employee('Rana Saleh', 'Development', 'Junior', './assests/Rana.jpg '),
+        new Employee('Lana Ali', 'Finance', 'Senior', './assests/Lana.jpg '),
+        new Employee('Tamara Ayoub', 'Marketing', 'Senior', './assests/Tamara.jpg '),
+        new Employee('Omar Zaid', 'Development', 'Senior', './assests/Omar.jpg '),
+        new Employee('Rana Saleh', 'Development', 'Junior', './assests/Rana.jpg '),
 
         
         new Employee('Hadi Ahmad', 'Finance', 'Mid-Senior', './assests/Hadi.jpg')
@@ -178,11 +187,11 @@ let ArrayEmployees =
     
 
 /*******************  Task 10  ***********************/
-
+RenderCards();
 function RenderCards() {
 
-
-    let container = document.getElementById('Container');   
+    // Main Conatiner to hold all rows
+    let container = document.getElementById('Container');     
     
     
     let numberOfEmployessInRows = 3;
@@ -190,33 +199,36 @@ function RenderCards() {
     let numberRequirdRows = Math.ceil(numberOfEmployess /numberOfEmployessInRows);
 
 
- 
-
-
+    //Creating Required Rows 
     let rows = [];
     for (let i = 0; i < numberRequirdRows; i++) {
         let  row =  document.createElement('div');
-            row.classList.add("row");
+            row.classList.add("employeeContainer");
 
             rows.push(row);
-            row = null;
+            
 
     }
+
+    // Appending Rows to the Main Conatiner
     for (const row of rows) {
         container.append(row);
     }
 
-    let divs = document.getElementsByClassName('row');
+    
 
-    let counter =0; 
-    for (const div of divs) { 
-             
-        for (let i = 0 ; i < numberOfEmployess;  i++) {
-
-            let card = document.createElement('div');
-             card.classList.add("card");
+    let Rows = document.getElementsByClassName('employeeContainer');
      
+    let counter =0; // Saving the current employee count 
+    for (const row of Rows) {  // Looping over rows
+             
+        for (let i = 0 ; i < numberOfEmployessInRows;  i++) { // Appending Cards to Rows
+
             let currentEmployee = ArrayEmployees[counter];
+
+            let card = document.createElement('div'); // Card container
+            card.classList.add("employeeDiv");             
+            
      
             let img = document.createElement('img');
             img.src = currentEmployee.ImageUrl;
@@ -238,10 +250,11 @@ function RenderCards() {
             salary.textContent = `Salary: ${currentEmployee.Salary}`;
      
             card.append(img,id,fullName,department,level,salary);
-            div.append(card);
+
+            row.append(card);
             counter++;
-            if(i % 2 == 0 && i >0)
-                break;
+
+
          }
        
     }
@@ -249,4 +262,4 @@ function RenderCards() {
 
     console.log(container);
 }
-RenderCards();
+
